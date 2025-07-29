@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AidWare Tech | The Opportunity of Early Intervention</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F8FF;
+        }
+        .chart-container {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 300px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #004AAD, #008DDA);
+            enable-background: text;
+            -webkit-text-fill-color: white;
+            font-weight: bold;
+            position: relative;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            text-align: center;
+        }
+        .flowchart-step {
+            position: relative;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            text-align: center;
+        }
+        .flowchart-arrow {
+            font-size: 2.5rem;
+            color: #008DDA;
+            line-height: 1;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #008DDA;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 24px;
+            height: 24px;
+            background-color: #ACE2E1;
+            border: 4px solid #008DDA;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-content {
+            width: calc(50% - 40px);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-white gradient-text">Unlocking Potential, One Screening at a Time</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">A deep-dive into the critical need for early developmental screening and AidWare Tech's mission to bridge the gap in underserved communities.</p>
+        </header>
+
+        <section id="crisis" class="my-16">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-500">The Silent Crisis in Early Childhood</h2>
+                <p class="text-6xl md:text-9xl font-black my-4" style="color: #004AAD;">1 in 6</p>
+                <p class="text-lg md:text-2xl font-semibold text-gray-700">children under six has a developmental delay, yet the vast majority are not identified until after they start school.</p>
+                <p class="mt-6 text-md md:text-lg text-gray-600 max-w-4xl mx-auto">For children in underserved communities, this delay creates a cascade of challenges—from academic setbacks to social isolation. The path to early identification is often blocked by high costs, lack of awareness, and insufficient services, perpetuating a cycle of disadvantage.</p>
+            </div>
+        </section>
+
+        <section id="solution" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold" style="color: #004AAD;">A Game-Changing Solution</h2>
+                <p class="mt-2 text-lg text-gray-600">AidWare Tech introduces a pioneering screening app—a monumental step towards health equity.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4" style="color:#008DDA;">&#128241;</div>
+                    <h3 class="text-xl font-bold mb-2">Universal Access</h3>
+                    <p class="text-gray-600">Instantly available on mobile and desktop at zero cost, breaking down all barriers to entry for families and schools.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4" style="color:#008DDA;">&#128221;</div>
+                    <h3 class="text-xl font-bold mb-2">Evidence-Based & Rapid</h3>
+                    <p class="text-gray-600">Utilizes scientifically validated protocols to provide precise, reliable results in minutes, not hours.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4" style="color:#008DDA;">&#128161;</div>
+                    <h3 class="text-xl font-bold mb-2">Actionable Guidance</h3>
+                    <p class="text-gray-600">Delivers immediate, easy-to-understand feedback, empowering parents and educators to take the right next steps.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="my-20 py-12 bg-gray-50 rounded-2xl">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold" style="color: #004AAD;">Empowering Our Community: A Simple Process</h2>
+                <p class="mt-2 text-lg text-gray-600">We designed our tool to be effortless, turning anyone into a champion for early detection.</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <div class="flowchart-step">
+                    <p class="font-bold text-lg">1. Easy Screening</p>
+                    <p>An educator or parent starts the 5-minute screener on any device.</p>
+                </div>
+                <div class="flowchart-arrow transform md:rotate-0 rotate-90">&rarr;</div>
+                <div class="flowchart-step">
+                    <p class="font-bold text-lg">2. Instant Results</p>
+                    <p>The app analyzes responses and provides immediate risk-level feedback.</p>
+                </div>
+                <div class="flowchart-arrow transform md:rotate-0 rotate-90">&rarr;</div>
+                <div class="flowchart-step">
+                    <p class="font-bold text-lg">3. Guided Action</p>
+                    <p>Families are connected with resources and clear steps for follow-up.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="my-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold" style="color: #004AAD;">Our Visionary Social Impact</h2>
+                <p class="mt-2 text-lg text-gray-600">With your sponsorship, we will transform thousands of lives. Here are our goals for the next 12 months.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-center mb-4">5,000+ Preschoolers Screened</h3>
+                    <p class="text-center text-gray-600 mb-4">We are committed to providing widespread access to our free screening tool, significantly increasing the rate of early detection in high-need areas.</p>
+                    <div class="chart-container mt-auto">
+                        <canvas id="screeningsChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col">
+                    <h3 class="text-2xl font-bold text-center mb-4">100+ Professionals Trained</h3>
+                    <p class="text-center text-gray-600 mb-4">By empowering educators and health workers, we are building a sustainable, local capacity for early intervention that will last for years to come.</p>
+                    <div class="chart-container mt-auto">
+                        <canvas id="trainingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="future" class="my-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold" style="color: #004AAD;">The Path Forward: A Holistic Platform</h2>
+                <p class="mt-2 text-lg text-gray-600">Our vision extends beyond communication. We are building a future-proof platform to screen for all key areas of early childhood development.</p>
+            </div>
+            <div class="relative max-w-2xl mx-auto p-4">
+                <div class="timeline-line hidden md:block"></div>
+                <div class="timeline-item flex md:justify-end mb-8 md:mb-0">
+                    <div class="timeline-content text-left md:text-right p-4 bg-white rounded-lg shadow-lg">
+                        <p class="font-bold text-lg" style="color: #008DDA;">Phase 1: Launched</p>
+                        <h4 class="text-xl font-bold">Communication & Literacy</h4>
+                        <p class="text-gray-600">Our core module, providing foundational screening for language and pre-reading skills.</p>
+                    </div>
+                    <div class="timeline-dot hidden md:block"></div>
+                </div>
+                <div class="timeline-item flex md:justify-start mb-8 md:mb-0 md:mt-[-4rem]">
+                     <div class="timeline-dot hidden md:block"></div>
+                    <div class="timeline-content p-4 bg-white rounded-lg shadow-lg">
+                        <p class="font-bold text-lg" style="color: #008DDA;">Phase 2: In Development</p>
+                        <h4 class="text-xl font-bold">Gross & Fine Motor Skills</h4>
+                        <p class="text-gray-600">Expanding our toolkit to identify potential physical development delays.</p>
+                    </div>
+                </div>
+                <div class="timeline-item flex md:justify-end md:mt-[-4rem]">
+                    <div class="timeline-content text-left md:text-right p-4 bg-white rounded-lg shadow-lg">
+                        <p class="font-bold text-lg" style="color: #008DDA;">Phase 3: Future Goal</p>
+                        <h4 class="text-xl font-bold">Cognitive & Behavioral</h4>
+                        <p class="text-gray-600">Completing our holistic vision with modules for problem-solving and social-emotional health.</p>
+                    </div>
+                     <div class="timeline-dot hidden md:block"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sponsor" class="my-20 py-16 text-white rounded-2xl shadow-2xl" style="background: linear-gradient(90deg, #004AAD, #008DDA);">
+            <div class="text-center max-w-3xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold">Be the Catalyst for Change</h2>
+                <p class="mt-4 text-lg text-blue-100">Sponsoring AidWare Tech is a strategic investment in the future health and prosperity of our communities. Your partnership makes a tangible, lasting difference.</p>
+                <a href="mailto:your.name@aidware.tech" class="mt-8 inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-blue-100 transition-colors">Contact Us to Sponsor</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-8 bg-gray-800 text-white">
+        <p>&copy; 2025 aidWare Tech. Helping You Help More.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapLabel = (str, maxWidth) => {
+                if (typeof str !== 'string') return str;
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const brilliantBlues = ['#008DDA', '#E0F2FE'];
+
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#004AAD',
+                        titleFont: {
+                            size: 16,
+                            weight: 'bold',
+                        },
+                        bodyFont: {
+                            size: 14,
+                        },
+                        padding: 12,
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+
+            const screeningsCtx = document.getElementById('screeningsChart');
+            if(screeningsCtx) {
+                new Chart(screeningsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Screenings Completed (1,250)', 'Remaining Goal (3,750)'],
+                        datasets: [{
+                            label: 'Screenings',
+                            data: [1250, 3750], 
+                            backgroundColor: brilliantBlues,
+                            borderColor: '#ffffff',
+                            borderWidth: 4,
+                            hoverOffset: 8
+                        }]
+                    },
+                    options: commonChartOptions
+                });
+            }
+
+            const trainingCtx = document.getElementById('trainingChart');
+            if(trainingCtx) {
+                new Chart(trainingCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Professionals Trained (25)', wrapLabel('Remaining Goal to be Trained (75)', 16)],
+                        datasets: [{
+                            label: 'Training',
+                            data: [25, 75], 
+                            backgroundColor: brilliantBlues,
+                            borderColor: '#ffffff',
+                            borderWidth: 4,
+                            hoverOffset: 8
+                        }]
+                    },
+                    options: commonChartOptions
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

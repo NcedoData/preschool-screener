@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Speech & Literacy Screener</title>
+    <link rel="stylesheet" href="style.css" />
+    
+</head>
+<body>
+    <header>
+        <a  href="home.html">
+        <img src="Images/Logo - aidware screener.jpg" alt="Go to Home" height="100px">
+    </a>
+        <h1>aidWare Speech & Literacy Screener</h1>
+        <p>Identify early risk factors for 2;0 - 3;11 year olds</p>
+    </header>
+    <main>
+        <form id="screener-form">
+        <fieldset>
+            <legend>Child Information</legend>
+             <div class="flex-row">
+                <div class="column">
+                 <label for="child-name">Child's Name:</label>
+             <input type="text" id="child-name" name="child-name" required />
+
+             <label for="child-age">Child's Age:</label>
+             <input type="number" step="0.1" id="child-age" name="child-age" required onblur="showScreenerByAge()" />
+
+              <label for="Home-language">Home Language:</label>
+             <input type="text" id="Home-language" name="Home-language" required />
+
+             <label for="Home-address">Home Address:</label>
+             <input type="text" id="Home-address" name="Home-address" required />
+
+             <label for="School-name">School:</label>
+             <input type="text" id="School-name" name="School-name" required />
+
+             </div>
+
+
+             <div class="column">
+                <label for="child-surname">Child's Surname:</label>
+             <input type="text" id="child-surname" name="child-surname" required />
+
+             <label for="Your-Fullname">Your Full Name:</label>
+             <input type="text" id="Your-Fullname" name="Your-Fullname" required />
+
+             <label for="role">Relationship:</label>
+      <select id="role" name="role">
+              <option value="parent">Parent</option>
+              <option value="teacher">Teacher</option>
+              <option value="caregiver">Caregiver</option>
+      </select>
+
+             <label for="surburb">Surburb:</label>
+             <input type="text" id="surburb" name="surburb" required />
+
+              <label for="School-language">Language of Learning:</label>
+             <input type="text" id="School-language" name="School-language" required />
+ </div>
+ </div>
+
+</fieldset>
+
+
+            <fieldset>
+  <legend>Communication Checklist (2;0–3;11)</legend>
+
+  <h3>1. Prelinguistic Communication</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child waves "bye-bye" or claps</td>
+        <td><input type="radio" name="prelinguistic1" value="yes" /></td>
+        <td><input type="radio" name="prelinguistic1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child points to show interest or request for something</td>
+        <td><input type="radio" name="prelinguistic2" value="yes" /></td>
+        <td><input type="radio" name="prelinguistic2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child shakes head for "no"</td>
+        <td><input type="radio" name="prelinguistic3" value="yes" /></td>
+        <td><input type="radio" name="prelinguistic3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child reaches toward desired objects</td>
+        <td><input type="radio" name="prelinguistic4" value="yes" /></td>
+        <td><input type="radio" name="prelinguistic4" value="no" /></td>
+      </tr>
+      <td><b>V.</b> My child uses gestures alongside sounds or words.</td>
+        <td><input type="radio" name="prelinguistic5" value="yes" /></td>
+        <td><input type="radio" name="prelinguistic5" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>2. Understanding (Receptive Language)</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child responds to their name when called</td>
+        <td><input type="radio" name="understanding1" value="yes" /></td>
+        <td><input type="radio" name="understanding1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child follows simple directions like “come here” or “give me”.</td>
+        <td><input type="radio" name="understanding2" value="yes" /></td>
+        <td><input type="radio" name="understanding2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child understands common words like "ball", "milk", "mommy".</td>
+        <td><input type="radio" name="understanding3" value="yes" /></td>
+        <td><input type="radio" name="understanding3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child looks at the correct object when asked "Where's the dog?".</td>
+        <td><input type="radio" name="understanding4" value="yes" /></td>
+        <td><input type="radio" name="understanding4" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>V.</b> My child follows simple directions like “come here” or “give me”.</td>
+        <td><input type="radio" name="understanding5" value="yes" /></td>
+        <td><input type="radio" name="understanding5" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h3>3. Speaking (Expressive Language)</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child babbles with varied sounds (e.g., “ba-da”, “ma-ma”).</td>
+        <td><input type="radio" name="Speaking1" value="yes" /></td>
+        <td><input type="radio" name="Speaking1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child uses at least 10 meaningful words.</td>
+        <td><input type="radio" name="Speaking2" value="yes" /></td>
+        <td><input type="radio" name="Speaking2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child combines two words like “more juice” or “mommy go”.</td>
+        <td><input type="radio" name="Speaking3" value="yes" /></td>
+        <td><input type="radio" name="Speaking3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child names familiar people or objects (e.g., “daddy”, “car”).</td>
+        <td><input type="radio" name="Speaking4" value="yes" /></td>
+        <td><input type="radio" name="Speaking4" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>V.</b> My child follows imitates words or sounds heard in the environment.</td>
+        <td><input type="radio" name="Speaking5" value="yes" /></td>
+        <td><input type="radio" name="Speaking5" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h3>4. Social Interaction (Pragmatic Language)</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child smiles or laughs during social games (e.g., peekaboo).</td>
+        <td><input type="radio" name="pragmatics1" value="yes" /></td>
+        <td><input type="radio" name="pragmatics1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child looks at you or others when talking or playing.</td>
+        <td><input type="radio" name="pragmatics2" value="yes" /></td>
+        <td><input type="radio" name="pragmatics2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child initiates communication (e.g., brings a toy to show).</td>
+        <td><input type="radio" name="pragmatics3" value="yes" /></td>
+        <td><input type="radio" name="pragmatics3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child takes turns during simple games.</td>
+        <td><input type="radio" name="pragmatics4" value="yes" /></td>
+        <td><input type="radio" name="pragmatics4" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>V.</b> My child shows awareness of other people’s feelings (e.g., comfort someone who is upset).</td>
+        <td><input type="radio" name="pragmatics5" value="yes" /></td>
+        <td><input type="radio" name="pragmatics5" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h3>5. Symbolic Play</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child pretends to feed a doll or stuffed animal.</td>
+        <td><input type="radio" name="simbolic-play1" value="yes" /></td>
+        <td><input type="radio" name="simbolic-play1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child uses objects for pretend actions (e.g., uses a block as a phone).</td>
+        <td><input type="radio" name="simbolic-play2" value="yes" /></td>
+        <td><input type="radio" name="simbolic-play2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child imitates adult routines (e.g., sweeping, talking on phone).</td>
+        <td><input type="radio" name="simbolic-play3" value="yes" /></td>
+        <td><input type="radio" name="simbolic-play3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child acts out stories or familiar routines with toys..</td>
+        <td><input type="radio" name="simbolic-play4" value="yes" /></td>
+        <td><input type="radio" name="simbolic-play4" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>V.</b> My child combines toys in play (e.g., puts a figure into a toy car).</td>
+        <td><input type="radio" name="simbolic-play5" value="yes" /></td>
+        <td><input type="radio" name="simbolic-play5" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h3>6. Emergent Literacy</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child enjoys looking at books with others</td>
+        <td><input type="radio" name="emergent-lit1" value="yes" /></td>
+        <td><input type="radio" name="emergent-lit1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child points to and names pictures in books.</td>
+        <td><input type="radio" name="emergent-lit2" value="yes" /></td>
+        <td><input type="radio" name="emergent-lit2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child imitates reading or pretends to read.</td>
+        <td><input type="radio" name="emergent-lit3" value="yes" /></td>
+        <td><input type="radio" name="emergent-lit3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child recognizes familiar signs or logos (e.g., cereal boxes).</td>
+        <td><input type="radio" name="emergent-lit4" value="yes" /></td>
+        <td><input type="radio" name="emergent-lit4" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>V.</b> My child tries to sing along with rhymes or songs.</td>
+        <td><input type="radio" name="emergent-lit5" value="yes" /></td>
+        <td><input type="radio" name="emergent-lit5" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+   <h3>7. General Development</h3>
+  <table class="checklist-table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Yes</th>
+        <th>No</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>I.</b> My child turns toward sounds or voices and responds to name being called (hearing).</td>
+        <td><input type="radio" name="general-dev1" value="yes" /></td>
+        <td><input type="radio" name="general-dev1" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>II.</b> My child makes eye contact and visually tracks moving objects or people (vision).</td>
+        <td><input type="radio" name="general-dev2" value="yes" /></td>
+        <td><input type="radio" name="general-dev2" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>III.</b> My child uses arms and legs to move around (e.g., crawling, cruising, walking).</td>
+        <td><input type="radio" name="general-dev3" value="yes" /></td>
+        <td><input type="radio" name="general-dev3" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IV.</b> My child picks up small objects using thumb and finger (fine motor/pincer grasp).</td>
+        <td><input type="radio" name="general-dev4" value="yes" /></td>
+        <td><input type="radio" name="general-dev4" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>V.</b> My child uses both hands together during play (e.g., holding a toy and banging it).</td>
+        <td><input type="radio" name="general-dev5" value="yes" /></td>
+        <td><input type="radio" name="general-dev5" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>VI.</b> My child shows interest in people or interacts during simple games (e.g., peekaboo).</td>
+        <td><input type="radio" name="general-dev6" value="yes" /></td>
+        <td><input type="radio" name="general-dev6" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>VII.</b> My child calms down with comfort or routine when upset (emotional regulation).</td>
+        <td><input type="radio" name="general-dev7" value="yes" /></td>
+        <td><input type="radio" name="general-dev7" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>VIII.</b> My child climbs onto furniture or stairs with or without help (gross motor).</td>
+        <td><input type="radio" name="general-dev8" value="yes" /></td>
+        <td><input type="radio" name="general-dev8" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>IX.</b> My child imitates simple everyday actions (e.g., brushing hair, stirring)..</td>
+        <td><input type="radio" name="general-dev9" value="yes" /></td>
+        <td><input type="radio" name="general-dev9" value="no" /></td>
+      </tr>
+      <tr>
+        <td><b>X.</b> My child eats all age appropriate foods without difficulties (e.g., no coughing, no regurgitation).</td>
+        <td><input type="radio" name="general-dev10" value="yes" /></td>
+        <td><input type="radio" name="general-dev10" value="no" /></td>
+      </tr>
+    </tbody>
+  </table>
+            <label for="comments">Comments (optional):</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <br/>
+
+
+    <div id="results" style="display: none;"></div>
+
+
+    </main>
+  
+
+ 
+
+<footer>
+     <p>&copy; 2025 AidWare Technologies • <a href="mailto:info@aidware.co" style="color: #a5b4fc;">Contact Us</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

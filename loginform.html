@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+
+   
+    <p class="login-header">
+        <img src="Images/Logo - aidware screener landscape.png" height="300px">
+    </p>
+    
+    <form>
+    <p>Log In:</p>
+    <fieldset id="logginField">
+    <label for="usernameInput">Username:</label>
+    <input type="text" id="usernameInput"/><br/>
+
+    <label for="passwordInput">Password</label>
+    <input type="password" id="passwordInput"/>
+
+    <p id="message"></p>
+
+    <br/>
+    <button type="button" onclick="verifyUser()">Log in</button>
+
+    </fieldset>
+
+   </form>
+
+    <a id="goToScreener" href="form1.html" style="display: none;"></a>
+    </div>
+
+
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+            font-family: Helvetica, sans-serif;
+            flex-wrap: auto;
+        }
+
+        .login-container{
+            text-align: left;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .login-header{
+            margin: 0;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+        
+
+        }
+    </style>
+   
+
+   <script>
+    function verifyUser(){
+        var username = document.getElementById("usernameInput").value;
+        var password = document.getElementById("passwordInput").value;
+
+        checkUserCreds(username, password);
+    }
+
+    function checkUserCreds(username, password) {
+        var systemUsername = "Ncedo";
+        var systemPassword = "Ncedo@speech";
+
+        if(username == systemUsername && password == systemPassword){
+            document.getElementById("message").innerHTML = "Correct. Loggin you in";
+            document.getElementById("goToScreener").click();
+
+        } else {
+           document.getElementById("message").innerHTML = "Username or password are incorrect"; 
+        }
+    
+    }
+   </script>
+
+   
+
+
+</body>
+</html>
